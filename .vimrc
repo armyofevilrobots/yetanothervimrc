@@ -68,6 +68,9 @@ set noerrorbells
 set novisualbell
 set t_vb=
 
+" Missing modeline
+set modeline
+set modelines=5
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -101,10 +104,12 @@ if has("gui_running")
   "colorscheme twilight
   "colorscheme peaksea
   colorscheme xoria256
+  "colorscheme solarized
+  "colorscheme wombat
 
   set nu
 else
-  colorscheme zellner
+  colorscheme wombat256
   set background=dark
   
   set nonu
@@ -192,8 +197,7 @@ endfunction
 " => Moving around, tabs and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Map space to / (search) and c-space to ? (backgwards search)
-map <space> /
-map <c-space> ?
+imap <c-space> <Esc>        
 map <silent> <leader><cr> :noh<cr>
 
 " Smart way to move btw. windows
@@ -281,7 +285,8 @@ cmap ½ $
 " => Python section
 """"""""""""""""""""""""""""""
 au FileType python set nocindent
-let python_highlight_all = 1
+"let python_highlight_all = 1
+let python_highlight_indents = 0
 au FileType python syn keyword pythonDecorator True None False self
 
 "Delete trailing white space, useful for Python ;)
@@ -369,11 +374,12 @@ let Grep_Skip_Dirs = 'RCS CVS SCCS .svn generated'
 set grepprg=/bin/grep\ -nH
 
 " Clojure mode stuffs
-let g:clj_paren_rainbow = 1
-let g:clj_highlight_builtins = 1
-let g:clj_highlight_contrib = 1
-let vimclojure#NailgunClient = "/home/enki/vim_runtime/ng"
-let clj_want_gorilla = 1
+"let g:clj_paren_rainbow = 1
+"let g:clj_highlight_builtins = 1
+"let g:clj_highlight_contrib = 1
+let vimclojure#NailgunClient = "/home/enki/.vim/ng"
+let vimclojure#WantNailgun=1
+"let clj_want_gorilla = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => MISC
@@ -395,7 +401,7 @@ set guioptions-=m
 set guioptions-=e
 if has ("gui_running")
     " Maximize
-    set lines=999 columns=999
+    set lines=83 columns=220
 endif
 
 
@@ -430,3 +436,12 @@ let NERDTreeMouseMode=2           " Use a single click to fold/unfold directorie
 
 let g:showmarks_enable=0                                  
 let g:proj_flags="imstg"
+
+"Some stuff to restore/save window sizes:
+"set sessionoptions+=resize,winpos,winsize,blank,curdir
+"set sessionoptions-=buffers
+"autocmd VIMEnter * :source /home/enki/.vim/session.vim
+"autocmd VIMLeave * :mksession! /home/enki/.vim/session.vim
+
+"Open to the right, always.
+set splitright
