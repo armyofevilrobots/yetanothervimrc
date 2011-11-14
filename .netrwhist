@@ -1,10 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/home/enki'
-let g:netrw_dirhist_2='/home/enki/.vim'
-let g:netrw_dirhist_3='/home/enki'
-let g:netrw_dirhist_4='/home/enki/Desktop'
-let g:netrw_dirhist_5='/home/enki/Desktop/client_data'
-let g:netrw_dirhist_6='/home/enki'
-let g:netrw_dirhist_7='/home/enki/Desktop/client_data'
-let g:netrw_dirhist_8='/home/enki/workspace/pms-linux-1.22.0'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/opt/enomalism2/lib'
+let g:netrw_dirhist_2='/opt/enomalism2/lib/python2.5'
+let g:netrw_dirhist_3='/opt/enomalism2/lib/python2.5/site-packages'
+let g:netrw_dirhist_4='/opt/enomalism2/lib/python2.5/site-packages/TurboGears-1.0.9-py2.5.egg'
+let g:netrw_dirhist_5='/opt/enomalism2/lib/python2.5/site-packages/TurboGears-1.0.9-py2.5.egg/turbogears'
+let g:netrw_dirhist_6='/opt/enomalism2/lib/python2.5/site-packages/TurboGears-1.0.9-py2.5.egg/turbogears/identity'

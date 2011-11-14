@@ -4,7 +4,7 @@ fun! MySys()
 endfun
 " Needed on some linux distros.
 " see http://www.adamlowe.me/2009/12/vim-destroys-all-other-rails-editors.html
-" filetype off 
+filetype off 
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
@@ -374,12 +374,45 @@ let Grep_Skip_Dirs = 'RCS CVS SCCS .svn generated'
 set grepprg=/bin/grep\ -nH
 
 " Clojure mode stuffs
-"let g:clj_paren_rainbow = 1
-"let g:clj_highlight_builtins = 1
-"let g:clj_highlight_contrib = 1
-let vimclojure#NailgunClient = "/home/enki/.vim/ng"
-let vimclojure#WantNailgun=1
-"let clj_want_gorilla = 1
+" Settings for VimClojure
+"" Let's remember some things, like where the .vim folder is.
+if has("win32") || has("win64")
+    let windows=1
+    let vimfiles=$HOME . "/vimfiles"
+    let sep=";"
+else
+    let windows=0
+    let vimfiles=$HOME . "/.vim"
+    let sep=":"
+endif
+let classpath = join(
+   \[".",
+   \ "/home/enki/.vim/bundle/VimClojure/nailgun-0.7.1.jar",
+   \ "/home/enki/.clojure/nailgun.jar",
+   \ "/home/enki/.clojure/clojure.jar",
+   \ "/home/enki/.clojure/clojure-contrib.jar",
+   \ "/home/enki/.clojure/vimclojure.jar",
+   \ "src", "src/main/clojure", "src/main/resources",
+   \ "test", "src/test/clojure", "src/test/resources",
+   \ "classes", "target/classes",
+   \ "lib/*", "lib/dev/*",
+   \ "bin",
+   \ vimfiles."/lib/*"
+   \],
+   \ sep)
+let vimclojureRoot = vimfiles."/bundle/vimclojure"
+let vimclojure#HighlightBuiltins=1
+let vimclojure#HighlightContrib=1
+let vimclojure#DynamicHighlighting=1
+let vimclojure#ParenRainbow=1
+let vimclojure#WantNailgun = 1
+let vimclojure#NailgunClient = vimclojureRoot."/lib/nailgun/ng"
+
+" Start vimclojure nailgun server (uses screen.vim to manage lifetime)
+nmap <silent> <Leader>sc :execute "ScreenShell java -cp \"" . classpath . sep . vimclojureRoot . "/lib/*" . "\" vimclojure.nailgun.NGServer 127.0.0.1" <cr>
+" nmap <silent> <Leader>sc :execute "ScreenShell java -cp /home/enki/.clojure/clojure.jar:/home/enki/.clojure/clojure-contrib.jar:/home/enki/.vim/bundle/VimClojure/bin/vimclojure.jar:/home/enki/.vim/bundle/VimClojure/nailgun-0.7.1.jar vimclojure.nailgun.NGServer 127.0.0.1" <cr>
+" Start a generic Clojure repl (uses screen.vim)
+nmap <silent> <Leader>sC :execute "ScreenShell java -cp \"" . classpath . "\" clojure.main" <cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => MISC
@@ -399,10 +432,6 @@ set cpoptions+=$
 set statusline=%F%m%r%h%w\ [%Y][HEX=\%02.2B][@%04l,%04v][LEN=%L] 
 set guioptions-=m
 set guioptions-=e
-if has ("gui_running")
-    " Maximize
-    set lines=83 columns=220
-endif
 
 
 """""""""""""""""
