@@ -1,8 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/opt/enomalism2/lib'
-let g:netrw_dirhist_2='/opt/enomalism2/lib/python2.5'
-let g:netrw_dirhist_3='/opt/enomalism2/lib/python2.5/site-packages'
-let g:netrw_dirhist_4='/opt/enomalism2/lib/python2.5/site-packages/TurboGears-1.0.9-py2.5.egg'
-let g:netrw_dirhist_5='/opt/enomalism2/lib/python2.5/site-packages/TurboGears-1.0.9-py2.5.egg/turbogears'
-let g:netrw_dirhist_6='/opt/enomalism2/lib/python2.5/site-packages/TurboGears-1.0.9-py2.5.egg/turbogears/identity'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/etc/apache2'
+let g:netrw_dirhist_2='/etc/apache2/mods-available'
