@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/enki/.local/share/gnome-shell'
-let g:netrw_dirhist_2='/home/enki/.local/share/gnome-shell/extensions'
-let g:netrw_dirhist_3='/home/enki/.local/share/gnome-shell/extensions/gTile@vibou'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/enki/.vim/bundle/vim-powerline/fontpatcher'
+let g:netrw_dirhist_2='/home/enki/.vim/bundle/vim-powerline'
+let g:netrw_dirhist_3='/home/enki/.vim/bundle/vim-powerline/autoload'
+let g:netrw_dirhist_4='/etc/sudoers.d'
+let g:netrw_dirhist_5='/home/enki/workspace/xstreamui/src/xstreamui'
+let g:netrw_dirhist_6='/home/enki/workspace/platemaker/src/platemaker'

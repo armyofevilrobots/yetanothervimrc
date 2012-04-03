@@ -86,12 +86,13 @@ elseif MySys() == "windows"
 elseif MySys() == "linux"
   "set gfn=Consolas\ 12
   "set gfn=Mensch\ 11
-  "set gfn=Inconsolata-dz\ 11
+  "set guifont=Inconsolata-dz\ 13
   set guifont=Anonymous\ Pro\ 12
   set shell=/bin/bash
 else
-  "set gfn=Consolas\ 12
-  set guifont=Anonymous\ Pro\ 12
+  set gfn=Consolas\ 13
+  "set guifont=Anonymous\ Pro\ 12
+  "set guifont=Inconsolata-dz\ 12
   set shell=/bin/bash
   
 endif
@@ -296,7 +297,9 @@ func! DeleteTrailingWS()
   exe "normal `z"
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
-autocmd FileType python compiler pylint
+"autocmd FileType python compiler pylint
+let g:syntastic_auto_loc_list=1
+let g:syntastic_enable_highlighting=1
 
 
 
@@ -474,3 +477,6 @@ let g:proj_flags="imstg"
 
 "Open to the right, always.
 set splitright
+let g:Powerline_symbols="unicode"
+
+

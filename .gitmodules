@@ -4,3 +4,15 @@
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule "bundle/vim-powerline"]
+	path = bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "bundle/vim-afterimage.git"]
+	path = bundle/vim-afterimage.git
+	url = https://github.com/tpope/vim-afterimage.git
+[submodule "bundle/Zenburn"]
+	path = bundle/Zenburn
+    url = https://github.com/vim-scripts/Zenburn.git
+[submodule "bundle/bufexplorer.zip"]
+	path = bundle/bufexplorer.zip
+    url = https://github.com/vim-scripts/bufexplorer.zip.git

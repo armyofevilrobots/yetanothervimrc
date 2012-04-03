@@ -1,3 +1,4 @@
 dotvim /home/enki/.vim
-TSSClientPython /home/enki/workspace/tssclient-python
 workspace /home/enki/workspace
+
+TSSClientPython /home/enki/workspace/tssclient-python
