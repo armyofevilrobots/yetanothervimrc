@@ -16,3 +16,63 @@
 [submodule "bundle/bufexplorer.zip"]
 	path = bundle/bufexplorer.zip
     url = https://github.com/vim-scripts/bufexplorer.zip.git
+[submodule "bundle/freya"]
+	path = bundle/freya
+    url = https://github.com/vim-scripts/freya.git
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+    url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/neverland-vim-theme"]
+	path = bundle/neverland-vim-theme
+    url = https://github.com/trapd00r/neverland-vim-theme.git
+[submodule "bundle/screen"]
+	path = bundle/screen
+    url = https://github.com/ervandew/screen.git
+
+[submodule "bundle/vim-bundle-python"]
+    path = bundle/vim-bundle-python
+    url = https://github.com/sophacles/vim-bundle-python.git
+
+[submodule "bundle/vim-colors-solarized"]
+    path = bundle/vim-colors-solarized
+    url = https://github.com/sophacles/vim-bundle-python.git
+
+[submodule "bundle/vim-colorschemes"]
+    path = bundle/vim-colorschemes
+    url = https://github.com/sophacles/vim-bundle-python.git
+
+[submodule "bundle/vim-irblack"]
+    path = bundle/vim-irblack
+    url = https://github.com/sophacles/vim-bundle-python.git
+
+[submodule "bundle/vim-javascript"]
+    path = bundle/vim-javascript
+    url = https://github.com/sophacles/vim-bundle-python.git
+
+[submodule "bundle/vim-openscad"]
+    path = bundle/vim-openscad
+    url = https://github.com/sophacles/vim-bundle-python.git
+
+[submodule "bundle/vim-project"]
+    path = bundle/vim-project
+    url = https://github.com/sophacles/vim-bundle-python.git
+
+[submodule "bundle/vim-railscasts-theme"]
+    path = bundle/vim-railscasts-theme
+    url = https://github.com/sophacles/vim-bundle-python.git
+
+[submodule "bundle/vim-taglist-plus"]
+    path = bundle/vim-taglist-plus
+    url = https://github.com/sophacles/vim-bundle-python.git
+
+[submodule "bundle/vim-wombat"]
+    path = bundle/vim-wombat
+    url = https://github.com/sophacles/vim-bundle-python.git
+
+[submodule "bundle/vim-yankring"]
+    path = bundle/vim-yankring
+    url = https://github.com/sophacles/vim-bundle-python.git
+
+[submodule "colors/rdark"]
+    path = colors/rdark
+    url = https://github.com/sophacles/vim-bundle-python.git
