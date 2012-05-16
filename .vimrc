@@ -297,9 +297,10 @@ func! DeleteTrailingWS()
   exe "normal `z"
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
-"autocmd FileType python compiler pylint
+autocmd FileType python compiler pylint
 let g:syntastic_auto_loc_list=1
 let g:syntastic_enable_highlighting=1
+let g:syntastic_quiet_warnings=0
 
 
 
