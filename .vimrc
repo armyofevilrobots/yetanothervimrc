@@ -298,6 +298,9 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd FileType python compiler pylint
+"set makeprg=pylint\ --reports=n\ --output-format=parseable\ %:p
+"let makeprg='pylint % -i y -r n -f parseable'
+"set errorformat=%f:%l:\ %m
 let g:syntastic_auto_loc_list=1
 let g:syntastic_enable_highlighting=1
 let g:syntastic_quiet_warnings=0
@@ -392,10 +395,10 @@ endif
 let classpath = join(
    \[".",
    \ "/home/enki/.vim/bundle/VimClojure/nailgun-0.7.1.jar",
-   \ "/home/enki/.clojure/nailgun.jar",
-   \ "/home/enki/.clojure/clojure.jar",
-   \ "/home/enki/.clojure/clojure-contrib.jar",
-   \ "/home/enki/.clojure/vimclojure.jar",
+   \ "/home/enki/workspace/clojure-1.4.0/nailgun.jar",
+   \ "/home/enki/workspace/clojure-1.4.0/clojure.jar",
+   \ "/home/enki/workspace/clojure-1.4.0/clojure-contrib.jar",
+   \ "/home/enki/workspace/clojure-1.4.0/vimclojure.jar",
    \ "src", "src/main/clojure", "src/main/resources",
    \ "test", "src/test/clojure", "src/test/resources",
    \ "classes", "target/classes",
@@ -410,13 +413,14 @@ let vimclojure#HighlightContrib=1
 let vimclojure#DynamicHighlighting=1
 let vimclojure#ParenRainbow=1
 let vimclojure#WantNailgun = 1
-let vimclojure#NailgunClient = vimclojureRoot."/lib/nailgun/ng"
+let vimclojure#NailgunClient = vimclojureRoot."/ng"
 
 " Start vimclojure nailgun server (uses screen.vim to manage lifetime)
-nmap <silent> <Leader>sc :execute "ScreenShell java -cp \"" . classpath . sep . vimclojureRoot . "/lib/*" . "\" vimclojure.nailgun.NGServer 127.0.0.1" <cr>
+"nmap <silent> <Leader>sc :execute "ScreenShell java -cp \"" . classpath . sep . vimclojureRoot . "/lib/*" . "\" vimclojure.nailgun.NGServer 127.0.0.1" <cr>
 " nmap <silent> <Leader>sc :execute "ScreenShell java -cp /home/enki/.clojure/clojure.jar:/home/enki/.clojure/clojure-contrib.jar:/home/enki/.vim/bundle/VimClojure/bin/vimclojure.jar:/home/enki/.vim/bundle/VimClojure/nailgun-0.7.1.jar vimclojure.nailgun.NGServer 127.0.0.1" <cr>
 " Start a generic Clojure repl (uses screen.vim)
-nmap <silent> <Leader>sC :execute "ScreenShell java -cp \"" . classpath . "\" clojure.main" <cr>
+"nmap <silent> <Leader>sC :execute "ScreenShell java -cp \"" . classpath . "\" clojure.main" <cr>
+nmap <silent> <Leader>sc :execute "java -cp /home/enki/workspace/clojure-1.4.0/clojure.jar:home/enki/workspace/vimclojure/lib/build/runtime-1.4.5.jar:server/server-2.3.3.jar vimclojure.nailgun.NGServer 127.0.0.1"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => MISC
@@ -433,7 +437,8 @@ map <leader>q :e ~/buffer<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set cpoptions+=$
 " set virtualedit=all
-set statusline=%F%m%r%h%w\ [%Y][HEX=\%02.2B][@%04l,%04v][LEN=%L] 
+"[HEX=\%02.2B]
+set statusline=%F%m%r%h%w\ [%Y][@%04l/%L,%04v]
 set guioptions-=m
 set guioptions-=e
 
@@ -457,7 +462,7 @@ let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
 
 " Don't display these kinds of files
 let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
-            \ '\.o$', '\.so$', '\.egg$', '^\.git$' ]
+            \ '\.o$', '\.so$', '\.egg$' ]
 
 let NERDTreeShowBookmarks=1       " Show the bookmarks table on startup
 let NERDTreeShowFiles=1           " Show hidden files, too
@@ -469,6 +474,7 @@ let NERDTreeMouseMode=2           " Use a single click to fold/unfold directorie
 
 let g:showmarks_enable=0                                  
 let g:proj_flags="imstg"
+let g:proj_window_width=35
 
 "Some stuff to restore/save window sizes:
 "set sessionoptions+=resize,winpos,winsize,blank,curdir
