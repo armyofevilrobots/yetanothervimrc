@@ -28,11 +28,9 @@
 [submodule "bundle/screen"]
 	path = bundle/screen
     url = https://github.com/ervandew/screen.git
-
 [submodule "bundle/vim-bundle-python"]
     path = bundle/vim-bundle-python
     url = https://github.com/sophacles/vim-bundle-python.git
-
 [submodule "bundle/vim-colors-solarized"]
     path = bundle/vim-colors-solarized
     url = https://github.com/sophacles/vim-bundle-python.git
@@ -85,3 +83,15 @@
 [submodule "bundle/molokai.git"]
 	path = bundle/molokai.git
 	url = https://github.com/tomasr/molokai.git
+[submodule "bundle/vim-virtualenv"]
+	path = bundle/vim-virtualenv
+	url = https://github.com/jmcantrell/vim-virtualenv.git
+[submodule "bundle/conque"]
+	path = bundle/conque
+	url = https://github.com/trammell/vim-conque.git
+[submodule "bundle/command-t"]
+	path = bundle/command-t
+	url = https://github.com/wincent/Command-T.git
+[submodule "bundle/vim-dispatch"]
+	path = bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git
