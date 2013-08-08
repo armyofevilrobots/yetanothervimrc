@@ -1,97 +1,126 @@
 [submodule "bundle/MatchTag"]
 	path = bundle/MatchTag
 	url = https://github.com/gregsexton/MatchTag.git
+    ignore = dirty
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+    ignore = dirty
 [submodule "bundle/vim-powerline"]
 	path = bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
+    ignore = dirty
 [submodule "bundle/vim-afterimage.git"]
 	path = bundle/vim-afterimage.git
 	url = https://github.com/tpope/vim-afterimage.git
+    ignore = dirty
 [submodule "bundle/Zenburn"]
 	path = bundle/Zenburn
     url = https://github.com/vim-scripts/Zenburn.git
+    ignore = dirty
 [submodule "bundle/bufexplorer.zip"]
 	path = bundle/bufexplorer.zip
     url = https://github.com/vim-scripts/bufexplorer.zip.git
+    ignore = dirty
 [submodule "bundle/freya"]
 	path = bundle/freya
     url = https://github.com/vim-scripts/freya.git
+    ignore = dirty
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
     url = https://github.com/scrooloose/nerdcommenter.git
+    ignore = dirty
 [submodule "bundle/neverland-vim-theme"]
 	path = bundle/neverland-vim-theme
     url = https://github.com/trapd00r/neverland-vim-theme.git
+    ignore = dirty
 [submodule "bundle/screen"]
 	path = bundle/screen
     url = https://github.com/ervandew/screen.git
+    ignore = dirty
 [submodule "bundle/vim-bundle-python"]
     path = bundle/vim-bundle-python
     url = https://github.com/sophacles/vim-bundle-python.git
+    ignore = dirty
 [submodule "bundle/vim-colors-solarized"]
     path = bundle/vim-colors-solarized
     url = https://github.com/sophacles/vim-bundle-python.git
+    ignore = dirty
 
 [submodule "bundle/vim-colorschemes"]
     path = bundle/vim-colorschemes
     url = https://github.com/sophacles/vim-bundle-python.git
+    ignore = dirty
 
 [submodule "bundle/vim-irblack"]
     path = bundle/vim-irblack
     url = https://github.com/sophacles/vim-bundle-python.git
+    ignore = dirty
 
 [submodule "bundle/vim-javascript"]
     path = bundle/vim-javascript
     url = https://github.com/sophacles/vim-bundle-python.git
+    ignore = dirty
 
 [submodule "bundle/vim-openscad"]
     path = bundle/vim-openscad
     url = https://github.com/sophacles/vim-bundle-python.git
+    ignore = dirty
 
 [submodule "bundle/vim-project"]
     path = bundle/vim-project
     url = https://github.com/sophacles/vim-bundle-python.git
+    ignore = dirty
 
 [submodule "bundle/vim-railscasts-theme"]
     path = bundle/vim-railscasts-theme
     url = https://github.com/sophacles/vim-bundle-python.git
+    ignore = dirty
 
 [submodule "bundle/vim-taglist-plus"]
     path = bundle/vim-taglist-plus
     url = https://github.com/sophacles/vim-bundle-python.git
+    ignore = dirty
 
 [submodule "bundle/vim-wombat"]
     path = bundle/vim-wombat
     url = https://github.com/sophacles/vim-bundle-python.git
+    ignore = dirty
 
 [submodule "bundle/vim-yankring"]
     path = bundle/vim-yankring
     url = https://github.com/sophacles/vim-bundle-python.git
+    ignore = dirty
 
 [submodule "colors/rdark"]
     path = colors/rdark
     url = https://github.com/sophacles/vim-bundle-python.git
+    ignore = dirty
 [submodule "bundle/VimOrganizer"]
 	path = bundle/VimOrganizer
 	url = https://github.com/hsitz/VimOrganizer.git
+    ignore = dirty
 [submodule "bundle/numbers"]
 	path = bundle/numbers
 	url = https://github.com/myusuf3/numbers.vim.git
+    ignore = dirty
 [submodule "bundle/molokai.git"]
 	path = bundle/molokai.git
 	url = https://github.com/tomasr/molokai.git
+    ignore = dirty
 [submodule "bundle/vim-virtualenv"]
 	path = bundle/vim-virtualenv
 	url = https://github.com/jmcantrell/vim-virtualenv.git
+    ignore = dirty
 [submodule "bundle/conque"]
 	path = bundle/conque
 	url = https://github.com/trammell/vim-conque.git
+    ignore = dirty
 [submodule "bundle/command-t"]
 	path = bundle/command-t
 	url = https://github.com/wincent/Command-T.git
+    ignore = dirty
 [submodule "bundle/vim-dispatch"]
 	path = bundle/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
+    ignore = dirty
