@@ -1,8 +1,18 @@
-api_adaptor_server /home/enki/workspace/api_adaptor_server
-Awesome! /home/enki/.config/awesome
-dotvim /home/enki/.vim
-ecp /home/enki/workspace/ecp
-eeprommangler /home/enki/workspace/citadel_eeprom_mangler
-workspace /home/enki/workspace
-xs_openstack /home/enki/workspace/xs_openstack
+.oh-my-zsh /Users/derek/.oh-my-zsh
+AOER_TapHandle /Users/derek/Library/Application Support/Autodesk/Autodesk Fusion 360/API/AddIns/AOER_TapHandle
+bridgeburner-load /Users/derek/workspace/core_svcs/bridgeburner-load
+DirectSystemOperation /Users/derek/workspace/DirectSystemOperation
+dotvim /Users/derek/.vim
+golangsrc /Users/derek/golang/src
+lcthw /Users/derek/workspace/lcthw
+open_uberdash /Users/derek/workspace/AAI_repos/open_uberdash
+Reticulatus /Users/derek/workspace/reticulatus
+salt-vs /Users/derek/workspace/salt-vs
+srv /srv
+tinkerbelle /Users/derek/workspace/arduino_sketchbook/tinkerbelle
+vscc2 /Users/derek/golang/src/bitbucket.eng.vs/vscc2
+workspace /Users/derek/workspace
+xorch /Users/derek/workspace/xorch
+xs_31 /Users/derek/workspace/xs31
+xstack /Users/derek/workspace/xstack
 

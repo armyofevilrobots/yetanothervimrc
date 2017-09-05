@@ -64,10 +64,6 @@
 	path = bundle/vim-virtualenv
 	url = https://github.com/jmcantrell/vim-virtualenv.git
     ignore = dirty
-[submodule "bundle/conque"]
-	path = bundle/conque
-	url = https://github.com/trammell/vim-conque.git
-    ignore = dirty
 [submodule "bundle/command-t"]
 	path = bundle/command-t
 	url = https://github.com/wincent/Command-T.git
@@ -82,9 +78,6 @@
 [submodule "bundle/xml.vim"]
 	path = bundle/xml.vim
 	url = https://github.com/othree/xml.vim.git
-[submodule "bundle/haskellmode-vim"]
-	path = bundle/haskellmode-vim
-	url = https://github.com/lukerandall/haskellmode-vim.git
 [submodule "bundle/vim-instant-markdown"]
 	path = bundle/vim-instant-markdown
 	url = https://github.com/suan/vim-instant-markdown.git

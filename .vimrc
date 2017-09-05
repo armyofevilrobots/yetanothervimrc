@@ -1,3 +1,4 @@
+set nocompatible
 
 fun! MySys()
    return "$1"
@@ -5,6 +6,8 @@ endfun
 " Needed on some linux distros.
 " see http://www.adamlowe.me/2009/12/vim-destroys-all-other-rails-editors.html
 filetype off 
+let g:pathogen_disabled = []
+call add(g:pathogen_disabled, 'paredit')
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
@@ -15,6 +18,7 @@ call pathogen#helptags()
 set history=300
 
 " Enable filetype plugin
+syntax on
 filetype plugin on
 filetype indent on
 
@@ -81,19 +85,34 @@ let c_minlines=500
 if MySys() == "mac"
   set gfn=Bitstream\ Vera\ Sans\ Mono:h13
   set shell=/bin/bash
+  set background=dark
 elseif MySys() == "windows"
   set gfn=Bitstream\ Vera\ Sans\ Mono:h10
 elseif MySys() == "linux"
   "set gfn=Consolas\ 12
   "set gfn=Mensch\ 11
   "set guifont=Inconsolata-dz\ 13
-  set guifont=Anonymous\ Pro\ 12
+  "set guifont=Anonymous\ Pro\ 12
+  "set guifont=Cosmic\ Sans\ Neue\ Mono\ 13.5
+  "set guifont=Fantasque\ Sans\ Mono\ 13.5
+  "set guifont=hack:h18
+  set guifont=Fira\ Code\ Retina:h19 
+  highlight Comment cterm=italic gui=italic
   set shell=/bin/bash
 else
-  set gfn=Consolas\ For\ Powerline\ 13
+  "set gfn=Consolas\ For\ Powerline\ 13
+  "set guifont=Cosmic\ Sans\ Neue\ Mono\ 13.5
   "set guifont=Anonymous\ Pro\ 12
   "set guifont=Inconsolata-dz\ 12
+  "set guifont=Fantasque\ Sans\ Mono\ 13.5
+  " set guifont=hack:h18
+  " set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h18
+  " set guifont=hasklig:h18
   set shell=/bin/bash
+  set background=dark
+  set guifont=Fira\ Code\ Retina:h19
+  set macligatures
+  highlight Comment cterm=italic gui=italic
 endif
 
 
@@ -277,14 +296,15 @@ func! DeleteTrailingWS()
   exe "normal `z"
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
-autocmd FileType python compiler pylint
+"autocmd FileType python compiler pylint
 "set makeprg=pylint\ --reports=n\ --output-format=parseable\ %:p
 "let makeprg='pylint % -i y -r n -f parseable'
 "set errorformat=%f:%l:\ %m
 let g:syntastic_auto_loc_list=1
 let g:syntastic_enable_highlighting=1
-let g:syntastic_quiet_warnings=0
-
+"let g:syntastic_quiet_warnings = {'level': 'warnings'}
+let g:syntastic_python_checkers=['flake8', "pep8" ]
+let g:syntastic_check_on_open = 0
 
 
 au BufNewFile,BufRead *.jinja set syntax=htmljinja
@@ -294,7 +314,7 @@ au BufNewFile,BufRead *.mako set ft=mako
 "au FileType python inoremap <buffer> $i import 
 "au FileType python inoremap <buffer> $p print 
 "au FileType python inoremap <buffer> $f #--- PH ----------------------------------------------<esc>FP2xi
-"au FileType python inoremap # X<BS># 
+au FileType python inoremap # X<BS># 
 au FileType python map <buffer> <leader>1 /class 
 au FileType python map <buffer> <leader>2 /def 
 au FileType python map <buffer> <leader>C ?class 
@@ -361,46 +381,7 @@ let Grep_Skip_Dirs = 'RCS CVS SCCS .svn generated'
 set grepprg=/bin/grep\ -nH
 
 " Clojure mode stuffs
-" Settings for VimClojure
-"" Let's remember some things, like where the .vim folder is.
-if has("win32") || has("win64")
-    let windows=1
-    let vimfiles=$HOME . "/vimfiles"
-    let sep=";"
-else
-    let windows=0
-    let vimfiles=$HOME . "/.vim"
-    let sep=":"
-endif
-let classpath = join(
-   \[".",
-   \ "/home/enki/.vim/bundle/VimClojure/nailgun-0.7.1.jar",
-   \ "/home/enki/workspace/clojure-1.4.0/nailgun.jar",
-   \ "/home/enki/workspace/clojure-1.4.0/clojure.jar",
-   \ "/home/enki/workspace/clojure-1.4.0/clojure-contrib.jar",
-   \ "/home/enki/workspace/clojure-1.4.0/vimclojure.jar",
-   \ "src", "src/main/clojure", "src/main/resources",
-   \ "test", "src/test/clojure", "src/test/resources",
-   \ "classes", "target/classes",
-   \ "lib/*", "lib/dev/*",
-   \ "bin",
-   \ vimfiles."/lib/*"
-   \],
-   \ sep)
-let vimclojureRoot = vimfiles."/bundle/vimclojure"
-let vimclojure#HighlightBuiltins=1
-let vimclojure#HighlightContrib=1
-let vimclojure#DynamicHighlighting=1
-let vimclojure#ParenRainbow=1
-let vimclojure#WantNailgun = 1
-let vimclojure#NailgunClient = vimclojureRoot."/ng"
 
-" Start vimclojure nailgun server (uses screen.vim to manage lifetime)
-"nmap <silent> <Leader>sc :execute "ScreenShell java -cp \"" . classpath . sep . vimclojureRoot . "/lib/*" . "\" vimclojure.nailgun.NGServer 127.0.0.1" <cr>
-" nmap <silent> <Leader>sc :execute "ScreenShell java -cp /home/enki/.clojure/clojure.jar:/home/enki/.clojure/clojure-contrib.jar:/home/enki/.vim/bundle/VimClojure/bin/vimclojure.jar:/home/enki/.vim/bundle/VimClojure/nailgun-0.7.1.jar vimclojure.nailgun.NGServer 127.0.0.1" <cr>
-" Start a generic Clojure repl (uses screen.vim)
-"nmap <silent> <Leader>sC :execute "ScreenShell java -cp \"" . classpath . "\" clojure.main" <cr>
-nmap <silent> <Leader>sc :execute "java -cp /home/enki/workspace/clojure-1.4.0/clojure.jar:home/enki/workspace/vimclojure/lib/build/runtime-1.4.5.jar:server/server-2.3.3.jar vimclojure.nailgun.NGServer 127.0.0.1"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => MISC
@@ -453,10 +434,14 @@ let NERDTreeMouseMode=2           " Use a single click to fold/unfold directorie
                                   " and a double click to open files
 noremap <F2> :NERDTreeToggle<CR>
 
+"Make sure we use omnicomplete instead of ctl-space
+inoremap <C-Space> <C-x><C-o>
+inoremap <C-@> <C-Space>
+
 let g:showmarks_enable=0                                  
 let g:proj_flags="imstg"
 let g:proj_window_width=35
-let g:virtualenv_directory='/home/enki/workspace'
+let g:virtualenv_directory='/home/derek/workspace'
 
 
 "Supertab stuff to prevent conflict with UltiSnips
@@ -489,7 +474,6 @@ let g:slimv_swank_cmd = '! xterm -e sbcl --load ~/.vim/bundle/slimv/slime/start-
 " To use, place these commands in your .vimrc file (replacing any
 " existing colorscheme commands). See also ":help solarized"
 
-set number
 
 
 
@@ -501,14 +485,13 @@ if has("gui_running")
   "colorscheme twilight
   "colorscheme peaksea
   "colorscheme xoria256
-  "colorscheme solarized
   "colorscheme wombat
   " ------------------------------------------------------------------
   " Solarized Colorscheme Config
   " ------------------------------------------------------------------
   let g:solarized_contrast="high"    "default value is normal
   syntax enable
-  set background=light
+  set background=dark
   colorscheme solarized
   " ------------------------------------------------------------------
   " The following items are available options, but do not need to be
@@ -518,7 +501,7 @@ if has("gui_running")
   " let g:solarized_bold=1
   " let g:solarized_underline=1
   " let g:solarized_italic=1
-  " let g:solarized_termcolors=16
+  " let g:solarized_termcolors=256
   " let g:solarized_visibility="normal"
   " let g:solarized_diffmode="normal"
   " let g:solarized_hitrail=0
@@ -527,28 +510,38 @@ if has("gui_running")
   set nu
 else
   set t_Co=256
-  "colorscheme solarized
-  colorscheme xoria256
+  let g:solarized_termcolors=256
   set background=dark
+  colorscheme solarized
+  "colorscheme xoria256
+  highlight Comment cterm=italic gui=italic
   set nonu
 endif
-"
-"
-"Turns out that rainbow parens are generally awesome all the time.
-function! Config_Rainbow()
-    call rainbow_parentheses#load(0)
-    call rainbow_parentheses#load(1)
-    call rainbow_parentheses#load(2)
-    call rainbow_parentheses#load(3)
-endfunction
 
-function! Load_Rainbow()
-    call rainbow_parentheses#activate()
-endfunction
+au BufRead,BufNewFile Vagrantfile\= set ft=ruby
 
-augroup TastetheRainbow
-    autocmd!
-    autocmd Syntax * call Config_Rainbow()
-    autocmd VimEnter,BufRead,BufWinEnter,BufNewFile * call Load_Rainbow()
-augroup END
+"; Install powerline
+set rtp+="/home/derek/.vim/bundle/powerline/powerline/bindings/vim"
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+let g:Powerline_symbols = 'fancy'
+let g:Powerline_dividers_override = ["\Ue0b0", "\Ue0b1", "\Ue0b2", "\Ue0b3"]
+let g:Powerline_symbols_override = { 'BRANCH': "\Ue0a0", 'LINE': "\Ue0a1", 'RO': "\Ue0a2" }
+
+set number
+
+"Fix pyflake/flake8 indents with https://github.com/hynek/vim-python-pep8-indent.git
+let g:pymode_indent = 0
+
+"; A bunch of haskell stuffs.
+au BufEnter *.hs compiler ghc
+let g:haddock_browser="/usr/bin/google-chrome"
+let g:haskell_conceal_enumerations=0
+
+"; JS Hinting
+let g:syntastic_jshint_exec="/home/derek/.npm/jshint/2.5.1/package/bin/jshint"
+let g:haddock_docdir="/usr/share/haddock-2.13.2/html/"
+
+"; GoPath /Users/derek/
 

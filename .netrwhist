@@ -1,3 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/etc/udev/rules.d'
+let g:netrw_dirhist_2='/home/enki/.vim/bundle/vim-colors-solarized/.git'
+let g:netrw_dirhist_3='/home/enki/workspace/xs_openstack/xstream.openstack/docs/source/modules'
+let g:netrw_dirhist_4='/home/enki/.vagrant.d/boxes/centos64'
+let g:netrw_dirhist_5='/home/enki/workspace/gitolite-admin/conf'
+let g:netrw_dirhist_6='/home/enki/workspace/rubythehardway'
+let g:netrw_dirhist_7='/home/enki'
