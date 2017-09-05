@@ -6,9 +6,9 @@
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
     ignore = dirty
-[submodule "bundle/vim-powerline"]
-	path = bundle/vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "bundle/powerline"]
+	path = bundle/powerline
+	url = https://github.com/Lokaltog/powerline.git
     ignore = dirty
 [submodule "bundle/vim-afterimage.git"]
 	path = bundle/vim-afterimage.git
@@ -44,65 +44,17 @@
     ignore = dirty
 [submodule "bundle/vim-colors-solarized"]
     path = bundle/vim-colors-solarized
-    url = https://github.com/sophacles/vim-bundle-python.git
+    url =  git://github.com/altercation/vim-colors-solarized.git
     ignore = dirty
 
 [submodule "bundle/vim-colorschemes"]
     path = bundle/vim-colorschemes
-    url = https://github.com/sophacles/vim-bundle-python.git
+    url = 
     ignore = dirty
 
-[submodule "bundle/vim-irblack"]
-    path = bundle/vim-irblack
-    url = https://github.com/sophacles/vim-bundle-python.git
-    ignore = dirty
-
-[submodule "bundle/vim-javascript"]
-    path = bundle/vim-javascript
-    url = https://github.com/sophacles/vim-bundle-python.git
-    ignore = dirty
-
-[submodule "bundle/vim-openscad"]
-    path = bundle/vim-openscad
-    url = https://github.com/sophacles/vim-bundle-python.git
-    ignore = dirty
-
-[submodule "bundle/vim-project"]
-    path = bundle/vim-project
-    url = https://github.com/sophacles/vim-bundle-python.git
-    ignore = dirty
-
-[submodule "bundle/vim-railscasts-theme"]
-    path = bundle/vim-railscasts-theme
-    url = https://github.com/sophacles/vim-bundle-python.git
-    ignore = dirty
-
-[submodule "bundle/vim-taglist-plus"]
-    path = bundle/vim-taglist-plus
-    url = https://github.com/sophacles/vim-bundle-python.git
-    ignore = dirty
-
-[submodule "bundle/vim-wombat"]
-    path = bundle/vim-wombat
-    url = https://github.com/sophacles/vim-bundle-python.git
-    ignore = dirty
-
-[submodule "bundle/vim-yankring"]
-    path = bundle/vim-yankring
-    url = https://github.com/sophacles/vim-bundle-python.git
-    ignore = dirty
-
-[submodule "colors/rdark"]
-    path = colors/rdark
-    url = https://github.com/sophacles/vim-bundle-python.git
-    ignore = dirty
 [submodule "bundle/VimOrganizer"]
 	path = bundle/VimOrganizer
 	url = https://github.com/hsitz/VimOrganizer.git
-    ignore = dirty
-[submodule "bundle/numbers"]
-	path = bundle/numbers
-	url = https://github.com/myusuf3/numbers.vim.git
     ignore = dirty
 [submodule "bundle/molokai.git"]
 	path = bundle/molokai.git
@@ -124,3 +76,21 @@
 	path = bundle/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
     ignore = dirty
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/xml.vim"]
+	path = bundle/xml.vim
+	url = https://github.com/othree/xml.vim.git
+[submodule "bundle/haskellmode-vim"]
+	path = bundle/haskellmode-vim
+	url = https://github.com/lukerandall/haskellmode-vim.git
+[submodule "bundle/vim-instant-markdown"]
+	path = bundle/vim-instant-markdown
+	url = https://github.com/suan/vim-instant-markdown.git
+[submodule "bundle/riv.vim"]
+	path = bundle/riv.vim
+	url = https://github.com/Rykka/riv.vim.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
